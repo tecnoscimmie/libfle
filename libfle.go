@@ -2,7 +2,6 @@ package libfle
 
 import (
 	"math/rand"
-	"os"
 	"strings"
 
 	"github.com/fatih/color"
@@ -20,17 +19,6 @@ func getfles() []func(string) string {
 	}
 }
 
-func splitargs() string {
-	args := os.Args[1:]
-	s := ""
-
-	for i := 0; i < len(args); i++ {
-		s += args[i] + " "
-	}
-
-	return s
-}
-
 func stringtoslice(s string) []string {
 	return strings.Split(s, "")
 }
@@ -38,7 +26,6 @@ func stringtoslice(s string) []string {
 func NewFle(tofle string) string {
 	flist := getfles()
 
-	// argstring := splitargs()
 	s := stringtoslice(tofle)
 	result := ""
 
